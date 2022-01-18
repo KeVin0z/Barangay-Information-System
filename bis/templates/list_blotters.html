@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Blotters</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+
+  <div class="banr">
+    <div class="bant"><h1>Barangay Banaoang</h1></div>
+    <div class="bant2"><h3>Mangaldan, Pangasinan</h3></div>
+</div>
+
+<ul>
+    <div class="logo1"></div>
+    <li><a  href="">Dashboard</a></li>
+    <li><a href="#news">Barangay Officials</a></li>
+    <li><a href="#news">SK Officials</a></li>
+    <li><a href="#contact">Resident Records</a></li>
+    <li><a class="active" href="#about">Blotter Records</a></li>
+</ul>
+
+<div class="cont">
+  <h1 class="h">Blotter Records</h1>
+    <table class="hb">
+        <tr>
+          <th>Complainant</th>
+          <th>Respondent</th>
+          <th>Victim</th>
+          <th>Type</th>
+          <th>Location</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Status</th>
+          <th>Details</th>
+          <th>Action</th>
+        </tr>
+
+        {% for blotter in blotters_list %}
+
+        <tr>
+          <td>{{ blotter.complainant }}</td>
+          <td>{{ blotter.respondent }}</td>
+          <td>{{ blotter.victim }}</td>
+          <td>{{ blotter.types }}</td>
+          <td>{{ blotter.location }}</td>
+          <td>{{ blotter.date }}</td>
+          <td>{{ blotter.time }}</td>
+          <td>{{ blotter.status }}</td>
+          <td>{{ blotter.details }}</td>
+          <td><a href="/edit_blotter/{{ blotter.pk }}"> EDIT/</a><a href="/delete_blotter/{{ blotter.pk }}"> /DELETE MO NA</a></td>
+        </tr>
+
+        {% endfor %}
+
+      </table>
+      </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Resident</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+
+    <div class="banr">
+        <div class="bant"><h1>Barangay Banaoang</h1></div>
+        <div class="bant2"><h3>Mangaldan, Pangasinan</h3></div>
+    </div>
+    
+    <ul>
+        <div class="logo1"></div>
+        <li><a  href="">Dashboard</a></li>
+        <li><a  href="#news">Barangay Officials</a></li>
+        <li><a href="#news">SK Officials</a></li>
+        <li><a class="active" href="#contact">Resident Records</a></li>
+        <li><a href="#about">Blotter Records</a></li>
+    </ul>
+    
+    <div class="cont">
+      <h1 class="h">Update Resident</h1>
+    
+    <div class="conto">
+    <form action="/edit_residents/edit/{{ edit_resident.pk }}" method="post">{% csrf_token %}
+        <label for="fname">Full Name:</label>
+        <input type="text" class="fname" name="full_name" value="{{ edit_resident.full_name }}">
+
+        <label for="nname">Nick Name:</label>
+        <input type="text" class="nname" name="nick_name" value="{{ edit_resident.nick_name }}">
+
+        <label for="bdate">Birth Date:</label>
+        <input type="date" class="bdate" name="birth_date" value="{{ edit_resident.birth_date }}">
+
+        <label for="gender">Gender:</label>
+        <input type="text" class="gender" name="gender" value="{{ edit_resident.gender }}">
+
+        <label for="cstats">Civil Status:</label>
+        <select class="cstat" name="civil_status" required>
+            <option value="{{ edit_resident.civil_status }}">{{ edit_resident.civil_status }}</option>
+            <option value="Single">Single</option>
+            <option value="Married">Married </option>
+            <option value="Divorced">Divorced</option>
+            <option value="Separated">Separated</option>
+            <option value="Widowed">Widowed</option>
+        </select><br>
+
+        <label for="purok">Purok:</label>
+        <select class="cstat" name="purok" required>
+            <option value="{{ edit_resident.purok }}">{{ edit_resident.purok }}</option>
+            <option value="Purok 1">Purok 1</option>
+            <option value="Purok 2">Purok 2</option>
+            <option value="Purok 3">Purok 3</option>
+            <option value="Purok 4">Purok 4</option>
+            <option value="Purok 5">Purok 5</option>
+            <option value="Purok 6">Purok 6</option>
+        </select><br>
+
+        <label for="vstat">Voter Status:</label>
+        <select class="cstat" name="voter_status" required>
+            <option value="{{ edit_resident.voter_status }}">{{ edit_resident.voter_status }}</option>
+            <option value="Registered">Registered</option>
+            <option value="Not Registered">Not Registered</option>
+        </select><br>
+
+        <input type="submit" value="submit">
+      </form>
+      </div></div>
+</body>
+</html>

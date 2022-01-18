@@ -1,0 +1,269 @@
+body{
+    font-family: sans-serif;
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+    width: 15%;
+    background-color:rgba(50, 50, 50);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  li a {
+    display: block;
+    color:white;
+    padding: 20px 20px;
+    text-decoration: none;
+    border-bottom:2px solid black;
+  }
+  
+  li a.active {
+    background-color: #555;
+    color: cyan;
+    border-color: cyan;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #555;
+    color: cyan;
+    border-bottom:2px solid cyan;
+    border-color: cyan;
+  }
+  .logo1{
+    background-image: url("blogo.png");
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: center;
+    padding:50%;
+  }
+
+  .banr{
+    float: right;
+    background-color:rgba(50, 50, 50, 0.7);
+    width: 84.4%;
+  }
+
+  .bant{
+    margin-left: 35%;
+    font-size: 25px;
+    color: rgb(150, 255, 255);
+    text-shadow: 0px 7px 4px #000000;
+    
+  }
+
+  .bant2{
+    font-size: 20px;
+    margin-left: 42%;
+    color: white;
+    text-shadow: 0px 7px 4px #000000;
+  }
+
+  .v {
+    padding:25px;
+    font-size:25px;
+    color: white;
+    font-weight: bold;
+    float: left;
+    margin-top: 3%;
+    margin-left: 20%;
+    background-color:rgba(50, 50, 50, 0.7);
+    border-style: double;
+    border-width: 6px;
+    border-color: white;
+  }
+  
+  .v1 {
+    font-size:30px;
+    background-color: rgb(100, 255, 255);
+    color: black;
+    padding: 5px 10px;
+    border-style: double;
+    border-style: double;
+    border-width: 6px;
+  }
+
+  .m {
+    padding:25px;
+    font-size:25px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-top: 22%;
+    margin-right: 5%;
+    background-color:rgba(50, 50, 50, 0.7);
+    border-style: double;
+    border-width: 6px;
+    border-color: white;
+  }
+  
+  .m1 {
+    font-size:30px;
+    background-color: rgb(100, 255, 255);
+    color: black;
+    padding: 5px 10px;
+    border-style: double;
+    border-style: double;
+    border-width: 6px;
+  }
+  
+  .cont{
+    padding:2px ;
+    margin-top: 2.5%;
+    float: right;
+    background-color:rgba(50, 50, 50, 0.7);
+    width: 84.4%;
+  }
+
+  table, th, td {
+    background-color: white;
+    border: 1px solid black;
+  }
+
+  table{
+      margin-left: 10%;
+      width: 80%;
+      padding: 2px;
+      margin-bottom: 2.5%;
+      margin-top: 2.5%;
+  }
+
+  .hb{
+    width: 100%;
+    padding: 2px;
+    margin-bottom: 2.5%;
+    margin-top: 2.5%;
+}
+
+  th{
+    background-color: rgb(100, 255, 255);
+    padding: 10px; 
+    font-size: 20px;
+  }
+
+  td{
+    padding: 5px; 
+  }
+
+  .h{
+      color: white;
+      margin-left: 1%;
+      text-shadow: -6px 7px 4px #000000;
+  }
+
+  input[type=text], select {
+    width: 90%;
+    font-size: 15px;
+    padding: 10px 20px;
+    margin: 10px 5%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=date], select {
+    width: 90%;
+    font-size: 15px;
+    padding: 10px 20px;
+    margin: 10px 5%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=time], select {
+    width: 90%;
+    font-size: 15px;
+    padding: 10px 20px;
+    margin: 10px 5%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  input[type=radio], select {
+    width: 5%;
+    font-size: 10px;
+    margin: 2.5px 2px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  .cstat{
+    width: 90%;
+    font-size: 15px;
+    padding: 10px 20px;
+    margin: 10px 5%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  .det{
+    width: 90%;
+    font-size: 15px;
+    padding: 10px 20px;
+    margin: 10px 5%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  .container{
+      margin-left: 19%;
+  }
+  .container1{
+    margin-top: 10%;
+    margin-left: 19%;
+}
+  
+  input[type=submit] {
+    width: 90%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    margin: 8px 5%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  label{
+      text-shadow: 0px 4px 4px #000000;
+      font-weight: bold;
+      margin-left: 5%;
+      font-size: 15px;
+      color: rgb(200, 255, 255);
+      
+  }
+
+  .conto{
+      margin-top: 2.5%;
+      margin-bottom: 2.5%;
+      padding: 2px;
+      margin-left: 35%;
+      width: 30%;
+
+  }

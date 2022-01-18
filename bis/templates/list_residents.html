@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Residents</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+
+  <div class="banr">
+    <div class="bant"><h1>Barangay Banaoang</h1></div>
+    <div class="bant2"><h3>Mangaldan, Pangasinan</h3></div>
+</div>
+
+<ul>
+    <div class="logo1"></div>
+    <li><a  href="">Dashboard</a></li>
+    <li><a href="#news">Barangay Officials</a></li>
+    <li><a href="#news">SK Officials</a></li>
+    <li><a class="active" href="#contact">Resident Records</a></li>
+    <li><a href="#about">Blotter Records</a></li>
+</ul>
+
+<div class="cont">
+  <h1 class="h">Resident Records</h1>
+    <table>
+        <tr>
+          <th>Full Name</th>
+          <th>Nick Name</th>
+          <th>Birth Date</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Civil Status</th>
+          <th>Purok</th>
+          <th>Voter Status</th>
+          <th>Action</th>
+        </tr>
+
+        {% for resident in residents_list %}
+
+        <tr>
+          <td>{{ resident.full_name }}</td>
+          <td>{{ resident.nick_name }}</td>
+          <td>{{ resident.birth_date }}</td>
+          <td>{{ resident.age }}</td>
+          <td>{{ resident.gender }}</td>
+          <td>{{ resident.civil_status }}</td>
+          <td>{{ resident.purok }}</td>
+          <td>{{ resident.voter_status }}</td>
+          <td><a href="/edit_resident/{{ resident.pk }}"> EDIT/</a><a href="/delete_resident/{{ resident.pk }}"> /DELETE MO NA</a></td>
+        </tr>
+
+        {% endfor %}
+
+      </table>
+      </div>
+</body>
+</html>

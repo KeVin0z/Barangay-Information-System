@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Blotter</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+
+    <div class="banr">
+        <div class="bant"><h1>Barangay Banaoang</h1></div>
+        <div class="bant2"><h3>Mangaldan, Pangasinan</h3></div>
+    </div>
+    
+    <ul>
+        <div class="logo1"></div>
+        <li><a  href="">Dashboard</a></li>
+        <li><a  href="#news">Barangay Officials</a></li>
+        <li><a href="#news">SK Officials</a></li>
+        <li><a href="#contact">Resident Records</a></li>
+        <li><a class="active"href="#about">Blotter Records</a></li>
+    </ul>
+    
+    <div class="cont">
+      <h1 class="h">Update Blotter</h1>
+    
+    <div class="conto">
+    <form action="/edit_blotters/edit/{{ edit_blotter.pk }}" method="post">{% csrf_token %}
+        <label for="comp">Complainant:</label>
+        <input type="text" class="comp" name="complainant" value="{{ edit_blotter.complainant }}">
+
+        <label for="res">Respondent:</label>
+        <input type="text" class="res" name="respondent" value="{{ edit_blotter.respondent }}">
+
+        <label for="vic">Victim:</label>
+        <input type="text" class="vic" name="victim" value="{{ edit_blotter.victim }}">
+
+        <label for="vstat">Type:</label>
+        <select class="cstat" name="types" required>
+            <option value="{{ edit_blotter.types }}">{{ edit_blotter.types }}</option>
+            <option value="Amicable">Amicable</option>
+            <option value="Incident">Incident</option>
+        </select><br>
+
+        <label for="loc">Location:</label>
+        <input type="text" class="loc" name="location" value="{{ edit_blotter.location }}">
+
+        <label for="date">Date:</label>
+        <input type="date" class="bdate" name="date" value="{{ edit_blotter.date }}">
+
+        <label for="time">Time:</label>
+        <input type="time" class="bdate" name="time" value="{{ edit_blotter.time }}">
+
+        <label for="vstat">Status:</label>
+        <select class="cstat" name="status" required>
+            <option value="{{ edit_blotter.status }}">{{ edit_blotter.status }}</option>
+            <option value="Solved">Solved</option>
+            <option value="Active">Active</option>
+            <option value="Scheduled">Scheduled</option>
+        </select><br>
+
+        <label for="det">Details:</label><br>
+        <textarea class="det" name="details" rows="2" cols="50" placeholder="Enter Blotter or Incident here...">{{ edit_blotter.details }}</textarea>
+
+        <input type="submit" value="submit">
+      </form>
+      </div></div>
+</body>
+</html>
