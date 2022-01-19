@@ -26,8 +26,9 @@
 
 <div class="cont">
   <h1 class="h">Barangay Officials</h1>
-    <table>
+    <table class="hb">
         <tr>
+          <th>Picture</th>
           <th>Full Name</th>
           <th>Chairmanship</th>
           <th>Position</th>
@@ -37,6 +38,7 @@
         {% for official in officials_list %}
 
         <tr>
+          <td><img class="pic" src="/media/{{ official.image }}"/></td>
           <td>{{ official.full_name }}</td>
           <td>{{ official.chairmanship }}</td>
           <td>{{ official.position }}</td>
