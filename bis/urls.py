@@ -25,5 +25,8 @@ urlpatterns = [
     path('delete_blotter/<pk>', views.process_delete_blotter, name='process_delete_blotter'),
     path('create_sks', views.create_sks, name='create_sks'),
     path('create_sks/create', views.process_create_sk, name='process_create_sk'),
+    path('list_sks', views.list_sks, name='list_sks'),
+    path('edit_sk/<pk>', views.edit_sk, name='edit_sk'),
+    path('edit_sks/edit/<pk>', views.process_edit_sk, name='process_edit_sk'),
 
 ]

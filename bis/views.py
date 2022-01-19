@@ -157,3 +157,22 @@ def process_create_sk(request):
     sk.save()
 
     return redirect('list_sks')
+
+def list_sks(request):
+    sks = Sk.objects.all()
+    return render(request, 'list_sks.html', { 'sks_list' : sks })
+
+def edit_sk(request, pk):
+    sk = Sk.objects.get(pk = pk)
+    return render(request, 'edit_sks.html', { 'edit_sk' : sk })
+
+def process_edit_sk(request, pk):
+
+    sk = Sk.objects.get(pk = pk)
+
+    sk.full_name = request.POST.get('full_name')
+    sk.position = request.POST.get('position')
+
+    sk.save()
+
+    return redirect('list_sks')
