@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Resident
 from .models import Official
 from .models import Blotter
+from .models import Sk
 
 def index(request):
     return render(request, 'index.html')
@@ -143,3 +144,16 @@ def process_delete_blotter(request, pk):
     blotter.delete()
 
     return redirect('list_blotters')
+
+def create_sks(request):
+    return render(request, 'create_sks.html')
+
+def process_create_sk(request):
+    full_name = request.POST.get('full_name')
+    position = request.POST.get('position')
+
+    sk = Sk(full_name = full_name, position = position)
+
+    sk.save()
+
+    return redirect('list_sks')

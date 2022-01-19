@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Official</title>
+    <title>Create SK</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'index.css' %}">
 </head>
@@ -25,24 +25,24 @@
     </ul>
     
     <div class="cont">
-      <h1 class="h">Add Official</h1>
+      <h1 class="h">Add Sk</h1>
     
     <div class="conto">
 
-    <form action="/create_officials/create" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <form action="/create_sks/create" method="post">{% csrf_token %}
 
         <label for="fname">Full Name:</label>
-        <input type="text" class="fname" name="full_name">
-
-        <label for="chair">Chairmanship:</label>
-        <input type="text" class="chair" name="chairmanship">
-
-        <label for="pos">Position:</label>
-        <select class="cstat" name="position" required>
-            <option value=""></option>
-            <option value="Punong Barangay">Punong Barangay</option>
-            <option value="Kagawad">Kagawad</option>
-        </select><br>
+          <input type="text" class="fname" name="full_name"  required />
+          
+          <label>Choose a Position:</label>
+          <select class="cstat" name="position">
+            <option value="" selected ></option>
+            <option value="SK Chairman">SK Chairman</option>
+            <option value="SK Kagawad">SK Kagawad</option>
+            <option value="SK Secretary">SK Secretary</option>
+            <option value="SK Treasurer">SK Treasurer</option>
+          </select>
+        <br>
 
         <input type="submit" value="Submit">
       </form>

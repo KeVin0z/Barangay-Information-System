@@ -29,3 +29,7 @@ class Blotter(models.Model):
     time = models.TimeField()
     status = models.CharField(max_length=30)
     details = models.CharField(max_length=30)
+
+class Sk(models.Model):
+    full_name = models.CharField(max_length=30)
+    position = models.CharField(max_length=30)

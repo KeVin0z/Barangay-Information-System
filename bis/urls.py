@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('index', views.index, name='index'),
     path('create_residents', views.create_residents, name='create_residents'),
     path('create_residents/create', views.process_create_resident, name='process_create_resident'),
     path('list_residents', views.list_residents, name='list_residents'),
@@ -21,6 +22,8 @@ urlpatterns = [
     path('list_blotters', views.list_blotters, name='list_blotters'),
     path('edit_blotter/<pk>', views.edit_blotter, name='edit_blotter'),
     path('edit_blotters/edit/<pk>', views.process_edit_blotter, name='process_edit_blotter'),
-    path('delete_blotter/<pk>', views.process_delete_blotter, name='process_delete_blotter')
+    path('delete_blotter/<pk>', views.process_delete_blotter, name='process_delete_blotter'),
+    path('create_sks', views.create_sks, name='create_sks'),
+    path('create_sks/create', views.process_create_sk, name='process_create_sk'),
 
 ]
