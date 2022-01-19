@@ -3,6 +3,7 @@ from .models import Resident
 from .models import Official
 from .models import Blotter
 from .models import Sk
+from django.core.files.storage import FileSystemStorage
 
 def index(request):
     return render(request, 'index.html')
@@ -65,7 +66,13 @@ def process_create_official(request):
     chairmanship = request.POST.get('chairmanship')
     position = request.POST.get('position')
 
-    official = Official(full_name = full_name, chairmanship = chairmanship, position = position)
+    if request.method == 'POST' and request.FILES['image']:
+        image = request.FILES['image']
+        fs = FileSystemStorage()
+        filename = fs.save(image.name, image)
+        uploaded_file_url = fs.url(filename)
+
+    official = Official(image = image, full_name = full_name, chairmanship = chairmanship, position = position)
 
     official.save()
 

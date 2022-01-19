@@ -15,6 +15,7 @@ class Resident(models.Model):
         return int((datetime.now().date() - self.birth_date).days / 365.25)
 
 class Official(models.Model):
+    image = models.TextField(blank=True)
     full_name = models.CharField(max_length=30)
     chairmanship = models.CharField(max_length=30)
     position = models.CharField(max_length=30)

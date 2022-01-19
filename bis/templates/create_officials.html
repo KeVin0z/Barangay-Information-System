@@ -31,6 +31,9 @@
 
     <form action="/create_officials/create" method="post" enctype="multipart/form-data">{% csrf_token %}
 
+        <label for="image">Image:</label>
+        <input type="file" name="image"><br><br>
+
         <label for="fname">Full Name:</label>
         <input type="text" class="fname" name="full_name">
 
