@@ -51,7 +51,7 @@ ul {
   }
 
   .bant{
-    margin-left: 35%;
+    text-align: center;
     font-size: 25px;
     color: rgb(150, 255, 255);
     text-shadow: 0px 7px 4px #000000;
@@ -60,7 +60,7 @@ ul {
 
   .bant2{
     font-size: 20px;
-    margin-left: 42%;
+    text-align: center;
     color: white;
     text-shadow: 0px 7px 4px #000000;
   }
@@ -138,6 +138,7 @@ ul {
     width: 99%;
     float: right;
     margin-right: 0.5%;
+    padding: 2px;
   }
 
   .pic{
@@ -157,8 +158,9 @@ ul {
   }
 
   .h{
+      text-align: center;
       color: white;
-      margin-left: 1%;
+      margin-right: 1%;
       text-shadow: -6px 7px 4px #000000;
   }
 

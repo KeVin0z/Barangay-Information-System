@@ -7,6 +7,20 @@
     <title>Edit Sk</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+.fa-arrow-circle-left{
+  font-size: 50px;
+  color:white;
+}
+
+.fa-arrow-circle-left:hover{
+  font-size: 50px;
+  color:cyan;
+}
+</style>
 </head>
 <body>
 
@@ -17,7 +31,7 @@
     
     <ul>
         <div class="logo1"></div>
-        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="index">Dashboard</a></li>
         <li><a href="list_officials">Barangay Officials</a></li>
         <li><a class="active" href="list_sks">SK Officials</a></li>
         <li><a href="list_residents">Resident Records</a></li>
@@ -25,7 +39,8 @@
       </ul>
     
     <div class="cont">
-      <h1 class="h">Update Official</h1>
+      <a href="list_officials"><i class="fa fa-arrow-circle-left" style="margin-left: 2.5%; margin-top: 1%; float: left;"></i></a>  
+        <h1 class="h" style="margin-right: 5%;"><i class="fa fa-edit" style="color: cyan;"></i> Update Official</h1>
     
     <div class="conto">
     <form action="/edit_sks/edit/{{ edit_sk.pk }}" method="post">{% csrf_token %}

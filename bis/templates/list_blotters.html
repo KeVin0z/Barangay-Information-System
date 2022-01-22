@@ -5,47 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List of Blotters</title>
+    <style>
+
+      .fa-edit{
+          color:black;
+          font-size: 25px;
+        }
+        .fa-edit:hover{
+          color:blue;
+        }
+        .fa-trash{
+        margin-left: 10px;
+        color:grey;
+        font-size: 25px;
+      }
+      .fa-trash:hover{
+        color:red;
+      }
+        .ad{
+        float:right;
+        width: 100px;
+        height: 40px;
+        background-color:cyan ;
+        margin-top:-20px ;
+        margin-right: 50px;
+        border: 1px solid black;
+        border-radius: 4px;
+        color: black;
+      }
+      
+      .ad:hover{
+         background-color:#4CAF50;
+         color: white;
+         cursor: pointer;
+      
+        }
+      
+      </style>
     {% load static %}
     <link rel="stylesheet" href="{% static 'index.css' %}">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<style>
-
-.fa-edit{
-    color:black;
-    font-size: 25px;
-  }
-  .fa-edit:hover{
-    color:blue;
-  }
-  .fa-trash{
-  margin-left: 10px;
-  color:grey;
-  font-size: 25px;
-}
-.fa-trash:hover{
-  color:red;
-}
-  .ad{
-  float:right;
-  width: 100px;
-  height: 40px;
-  background-color:cyan ;
-  margin-top:-20px ;
-  margin-right: 50px;
-  border: 1px solid black;
-  border-radius: 4px;
-  color: black;
-}
-
-.ad:hover{
-   background-color:#4CAF50;
-   color: white;
-   cursor: pointer;
-
-  }
-
-</style>
 </head>
 <body>
 
@@ -56,7 +56,7 @@
 
 <ul>
   <div class="logo1"></div>
-  <li><a href="index.html">Dashboard</a></li>
+  <li><a href="index">Dashboard</a></li>
   <li><a href="list_officials">Barangay Officials</a></li>
   <li><a href="list_sks">SK Officials</a></li>
   <li><a href="list_residents">Resident Records</a></li>
