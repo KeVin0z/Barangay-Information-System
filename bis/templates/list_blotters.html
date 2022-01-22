@@ -7,6 +7,45 @@
     <title>List of Blotters</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+.fa-edit{
+    color:black;
+    font-size: 25px;
+  }
+  .fa-edit:hover{
+    color:blue;
+  }
+  .fa-trash{
+  margin-left: 10px;
+  color:grey;
+  font-size: 25px;
+}
+.fa-trash:hover{
+  color:red;
+}
+  .ad{
+  float:right;
+  width: 100px;
+  height: 40px;
+  background-color:cyan ;
+  margin-top:-20px ;
+  margin-right: 50px;
+  border: 1px solid black;
+  border-radius: 4px;
+  color: black;
+}
+
+.ad:hover{
+   background-color:#4CAF50;
+   color: white;
+   cursor: pointer;
+
+  }
+
+</style>
 </head>
 <body>
 
@@ -25,7 +64,10 @@
 </ul>
 
 <div class="cont">
-  <h1 class="h">Blotter Records</h1>
+  <h1 class="h"><i class="fa fa-folder" style="color: cyan;"></i> Blotter Records</h1>
+
+  <a  href="create_blotters"><button class="ad"><i class="fa fa-user-plus"></i> Blotter</button></a>
+
     <table class="hb">
         <tr>
           <th>Complainant</th>
@@ -52,7 +94,7 @@
           <td>{{ blotter.time }}</td>
           <td>{{ blotter.status }}</td>
           <td>{{ blotter.details }}</td>
-          <td><a href="/edit_blotter/{{ blotter.pk }}"> EDIT/</a><a href="/delete_blotter/{{ blotter.pk }}">DELETE</a></td>
+          <td><a href="/edit_blotter/{{ blotter.pk }}"><i class="fa fa-edit"></i></a> <a href="/delete_blotter/{{ blotter.pk }}"onclick="return confirm('Are you sure you want to delete this item?')"> <i class="fa fa-trash"></i></a></td>
         </tr>
 
         {% endfor %}

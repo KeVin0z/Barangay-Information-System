@@ -4,9 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List of Officials</title>
+    <title>List of SK Officials</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+.fa-edit{
+    color:black;
+    font-size: 25px;
+  }
+  .fa-edit:hover{
+    color:blue;
+  }
+
+</style> 
 </head>
 <body>
 
@@ -25,8 +38,8 @@
 </ul>
 
 <div class="cont">
-  <h1 class="h">Barangay Sk</h1>
-    <table>
+  <h1 class="h"><i class="fa fa-balance-scale" style="color:cyan"></i> Barangay SK Officials</h1>
+    <table style="width: 60%; margin-left: 20%;">
         <tr>
           <th>Full Name</th>
           <th>Position</th>
@@ -38,7 +51,7 @@
         <tr>
           <td>{{ sk.full_name }}</td>
           <td>{{ sk.position }}</td>
-          <td><a href="/edit_sk/{{ sk.pk }}"> EDIT/</a></td>
+          <td><a href="/edit_sk/{{ sk.pk }}"><i class="fa fa-edit"></a></td>
         </tr>
 
         {% endfor %}

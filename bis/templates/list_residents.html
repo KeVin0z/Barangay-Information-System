@@ -7,6 +7,46 @@
     <title>List of Residents</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'index.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+.fa-edit{
+    color:black;
+    font-size: 25px;
+  }
+  .fa-edit:hover{
+    color:blue;
+  }
+  .fa-trash{
+  margin-left: 10px;
+  color:grey;
+  font-size: 25px;
+}
+.fa-trash:hover{
+  color:red;
+}
+  .ad{
+  float:right;
+  width: 100px;
+  height: 40px;
+  background-color:cyan ;
+  margin-top:-20px ;
+  margin-right: 50px;
+  border: 1px solid black;
+  border-radius: 4px;
+  color: black;
+}
+
+.ad:hover{
+   background-color:#4CAF50;
+   color: white;
+   cursor: pointer;
+
+  }
+
+</style>
 </head>
 <body>
 
@@ -25,8 +65,12 @@
 </ul>
 
 <div class="cont">
-  <h1 class="h">Resident Records</h1>
-    <table>
+
+  <h1 class="h"><i class="fa fa-users" style="color: cyan;"></i> Resident Records</h1>
+
+  <a  href="create_residents"><button class="ad"><i class="fa fa-user-plus"></i> Resident</button></a>
+
+    <table style="margin-top: 6%;">
         <tr>
           <th>Full Name</th>
           <th>Nick Name</th>
@@ -50,7 +94,7 @@
           <td>{{ resident.civil_status }}</td>
           <td>{{ resident.purok }}</td>
           <td>{{ resident.voter_status }}</td>
-          <td><a href="/edit_resident/{{ resident.pk }}"> EDIT/</a><a href="/delete_resident/{{ resident.pk }}"> /DELETE MO NA</a></td>
+          <td><a href="/edit_resident/{{ resident.pk }}"><i class="fa fa-edit"></i></a> <a href="/delete_resident/{{ resident.pk }}" onclick="return confirm('Are you sure you want to delete this item?')"> <i class="fa fa-trash"></i></a></td>
         </tr>
 
         {% endfor %}
