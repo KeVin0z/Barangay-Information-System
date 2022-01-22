@@ -4,6 +4,7 @@ from .models import Official
 from .models import Blotter
 from .models import Sk
 from django.core.files.storage import FileSystemStorage
+import os
 
 def index(request):
     return render(request, 'index.html')

@@ -28,7 +28,12 @@
       <h1 class="h">Update Official</h1>
     
     <div class="conto">
-    <form action="/edit_officials/edit/{{ edit_official.pk }}" method="post">{% csrf_token %}
+    <form action="/edit_officials/edit/{{ edit_official.pk }}" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+        <label for="image">Image:</label>
+        <img class="pic" src="/media/{{ official.image }}"/>
+        <input type="file" name="image" value="{{ edit_official.image }}"><br><br>
+
         <label for="fname">Full Name:</label>
         <input type="text" class="fname" name="full_name" value="{{ edit_official.full_name }}">
 
