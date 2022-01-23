@@ -7,6 +7,7 @@ from django.core.files.storage import FileSystemStorage
 import os
 
 
+
 def index(request):
     return render(request, 'index.html')
 
@@ -96,6 +97,8 @@ def process_edit_official(request, pk):
         image = request.FILES['image']
         fs = FileSystemStorage()
         filename = fs.save(image.name, image)
+        if os.path.isfile(os.getcwd()+official.image):
+            os.remove(os.getcwd()+official.image)
         official.image = fs.url(filename)
 
     official.full_name = request.POST.get('full_name')
