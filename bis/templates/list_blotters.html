@@ -28,7 +28,7 @@
         height: 40px;
         background-color:cyan ;
         margin-top:-20px ;
-        margin-right: 50px;
+        margin-right: 40px;
         border: 1px solid black;
         border-radius: 4px;
         color: black;
@@ -44,6 +44,7 @@
       </style>
     {% load static %}
     <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -68,7 +69,8 @@
 
   <a  href="create_blotters"><button class="ad"><i class="fa fa-user-plus"></i> Blotter</button></a>
 
-    <table class="hb">
+    <table id="myTable" style="width: 98%;">
+      <thead>
         <tr>
           <th>Complainant</th>
           <th>Respondent</th>
@@ -81,7 +83,8 @@
           <th>Details</th>
           <th>Action</th>
         </tr>
-
+      </thead>
+      <tbody>
         {% for blotter in blotters_list %}
 
         <tr>
@@ -101,5 +104,13 @@
 
       </table>
       </div>
+    </tbody>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
+      <script src="//cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+      <script type="text/javascript">
+        $(document).ready( function () {
+          $('#myTable').DataTable();
+      } );
+      </script>
 </body>
 </html>

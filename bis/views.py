@@ -9,7 +9,9 @@ import os
 
 
 def index(request):
-    return render(request, 'index.html')
+    punong_barangay = Official.objects.filter(position = 'Punong Barangay').last()
+    Appropriation = Official.objects.filter(chairmanship = 'COMMITTEE ON APPROPRIATION').last()
+    return render(request, 'index.html', { 'punong_barangay' : punong_barangay, 'appropriation' : Appropriation })
 
 def create_residents(request):
     return render(request, 'create_residents.html')
