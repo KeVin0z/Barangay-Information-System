@@ -74,7 +74,7 @@ def process_create_official(request):
         filename = fs.save(image.name, image)
         uploaded_file_url = fs.url(filename)
 
-    official = Official(image = image, full_name = full_name, chairmanship = chairmanship, position = position)
+    official = Official(image = uploaded_file_url, full_name = full_name, chairmanship = chairmanship, position = position)
 
     official.save()
 
@@ -92,7 +92,7 @@ def process_edit_official(request, pk):
 
     official = Official.objects.get(pk = pk)
 
-    if request.FILES['image']:
+    if request.FILES.get('image',False):
         image = request.FILES['image']
         fs = FileSystemStorage()
         filename = fs.save(image.name, image)

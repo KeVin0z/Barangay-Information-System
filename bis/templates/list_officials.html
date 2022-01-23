@@ -52,7 +52,7 @@
         {% for official in officials_list %}
 
         <tr>
-          <td><img class="pic" src="/media/{{ official.image }}"/></td>
+          <td><img class="pic" src="{{ official.image }}"/></td>
           <td>{{ official.full_name }}</td>
           <td>{{ official.chairmanship }}</td>
           <td>{{ official.position }}</td>
