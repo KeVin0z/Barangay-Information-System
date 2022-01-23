@@ -6,6 +6,7 @@ from .models import Sk
 from django.core.files.storage import FileSystemStorage
 import os
 
+
 def index(request):
     return render(request, 'index.html')
 
@@ -90,6 +91,12 @@ def edit_official(request, pk):
 def process_edit_official(request, pk):
 
     official = Official.objects.get(pk = pk)
+
+    if request.FILES['image']:
+        image = request.FILES['image']
+        fs = FileSystemStorage()
+        filename = fs.save(image.name, image)
+        official.image = fs.url(filename)
 
     official.full_name = request.POST.get('full_name')
     official.chairmanship = request.POST.get('chairmanship')
