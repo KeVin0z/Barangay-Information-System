@@ -9,9 +9,21 @@ import os
 
 
 def index(request):
-    punong_barangay = Official.objects.filter(position = 'Punong Barangay').last()
-    Appropriation = Official.objects.filter(chairmanship = 'COMMITTEE ON APPROPRIATION').last()
-    return render(request, 'index.html', { 'punong_barangay' : punong_barangay, 'appropriation' : Appropriation })
+    pb = Official.objects.get(position = 'Punong Barangay')
+    appro = Official.objects.get(chairmanship = 'COMMITTEE ON APPROPRIATION')
+    pw = Official.objects.get(chairmanship = 'COMMITTEE ON PUBLIC WORKS')
+    ch = Official.objects.get(chairmanship = 'COMMITTEE ON HEALTH')
+    ag = Official.objects.get(chairmanship = 'COMMITTEE ON AGRICULTURE')
+    ev = Official.objects.get(chairmanship = 'COMMITTEE ON ENVIRONMENT')
+    ed = Official.objects.get(chairmanship = 'COMMITTEE ON EDUCATION')
+    po = Official.objects.get(chairmanship = 'COMMITTEE ON PEACE & ORDER')
+    sk = Official.objects.get(chairmanship = 'SANGGUNIANG KABATAAN')
+    bs = Official.objects.get(position = 'Barangay Secretary')
+    bt = Official.objects.get(position = 'Barangay Treasurer')
+    bh = Official.objects.get(position = 'BHW President')
+    ct = Official.objects.get(position = 'Chief Tanod')
+    dcw = Official.objects.get(position = 'Day Care Worker')
+    return render(request, 'index.html', { 'pb' : pb, 'appro' : appro, 'pw' : pw, 'ch' : ch, 'ag' : ag, 'ev' : ev, 'ed' : ed, 'po' : po, 'sk' : sk, 'bs' : bs, 'bt' : bt, 'bh' : bh, 'ct' : ct, 'dcw' : dcw })
 
 def create_residents(request):
     return render(request, 'create_residents.html')

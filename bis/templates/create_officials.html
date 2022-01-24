@@ -35,16 +35,32 @@
         <input type="file" name="image"><br><br>
 
         <label for="fname">Full Name:</label>
-        <input type="text" class="fname" name="full_name">
+        <input type="text" class="fname" name="full_name" required>
 
-        <label for="chair">Chairmanship:</label>
-        <input type="text" class="chair" name="chairmanship">
+        <label for="pos">Chairmanship:</label>
+        <select class="cstat" name="chairmanship" >
+            <option value=""></option>
+            <option value="COMMITTEE ON APPROPRIATION">COMMITTEE ON APPROPRIATION</option>
+            <option value="COMMITTEE ON PUBLIC WORKS">COMMITTEE ON PUBLIC WORKS</option>
+            <option value="COMMITTEE ON HEALTH">COMMITTEE ON HEALTH</option>
+            <option value="COMMITTEE ON AGRICULTURE">COMMITTEE ON AGRICULTURE</option>
+            <option value="COMMITTEE ON ENVIRONMEN">COMMITTEE ON ENVIRONMENT</option>
+            <option value="COMMITTEE ON EDUCATION">COMMITTEE ON EDUCATION</option>
+            <option value="COMMITTEE ON PEACE & ORDER">COMMITTEE ON PEACE & ORDER</option>
+            <option value="SANGGUNIANG KABATAAN">SANGGUNIANG KABATAAN</option>
+        </select><br>
 
         <label for="pos">Position:</label>
         <select class="cstat" name="position" required>
             <option value=""></option>
             <option value="Punong Barangay">Punong Barangay</option>
             <option value="Kagawad">Kagawad</option>
+            <option value="Sangguniang Kabataan">Sangguniang Kabataan</option>
+            <option value="Barangay Secretary">Barangay Secretary</option>
+            <option value="Barangay Treasurer">Barangay Treasurer</option>
+            <option value="BHW President">BHW President</option>
+            <option value="Chief Tanod">Chief Tanod</option>
+            <option value="Day Care Worker">Day Care Worker</option>
         </select><br>
 
         <input type="submit" value="Submit">
