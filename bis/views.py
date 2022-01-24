@@ -208,3 +208,13 @@ def process_edit_sk(request, pk):
     sk.save()
 
     return redirect('list_sks')
+
+def list_residents_bc(request):
+    residents_bc = Resident.objects.all()
+    return render(request, 'list_residents_bc.html', { 'list_residents_bc' : residents_bc })
+
+def gbc_resident(request, pk):
+    resident_bc = Resident.objects.get(pk = pk)
+    pb = Official.objects.get(position = 'Punong Barangay')
+    return render(request, 'barangay_clearance.html', { 'gbc_resident' : resident_bc, 'pb' : pb })
+

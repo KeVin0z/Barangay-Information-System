@@ -60,11 +60,11 @@
   <li><a href="index">Dashboard</a></li>
   <li><a href="list_officials">Barangay Officials</a></li>
   <li><a href="list_sks">SK Officials</a></li>
-  <li><a class="active" href="list_residents">Resident Records</a></li>
+  <li><a href="list_residents">Resident Records</a></li>
   <li><a href="list_blotters">Blotter Records</a></li>
   <li><a href="list_residents_bc">Barangay Clearance</a></li>
   <li><a href="list_residents_cr">Certificate of Residency</a></li>
-  <li><a href="list_residents_ci">Certificate of Indigency</a></li>
+  <li><a class="active" href="list_residents_ci">Certificate of Indigency</a></li>
 </ul>
 
 <div class="cont">
@@ -89,18 +89,18 @@
         </tr>
       </thead>
       <tbody>
-        {% for resident in residents_list %}
+        {% for residents_bc in list_residents_bc %}
 
         <tr>
-          <td>{{ resident.full_name }}</td>
-          <td>{{ resident.nick_name }}</td>
-          <td>{{ resident.birth_date }}</td>
-          <td>{{ resident.age }}</td>
-          <td>{{ resident.gender }}</td>
-          <td>{{ resident.civil_status }}</td>
-          <td>{{ resident.purok }}</td>
-          <td>{{ resident.voter_status }}</td>
-          <td><a href="/edit_resident/{{ resident.pk }}"><i class="fa fa-edit"></i></a> <a href="/delete_resident/{{ resident.pk }}" onclick="return confirm('Are you sure you want to delete this item?')"> <i class="fa fa-trash"></i></a></td>
+          <td>{{ residents_bc.full_name }}</td>
+          <td>{{ residents_bc.nick_name }}</td>
+          <td>{{ residents_bc.birth_date }}</td>
+          <td>{{ residents_bc.age }}</td>
+          <td>{{ residents_bc.gender }}</td>
+          <td>{{ residents_bc.civil_status }}</td>
+          <td>{{ residents_bc.purok }}</td>
+          <td>{{ residents_bc.voter_status }}</td>
+          <td><a href="/gbc_resident/{{ residents_bc.pk }}"><i class="fa fa-edit"></i></a></td>
         </tr>
 
         {% endfor %}

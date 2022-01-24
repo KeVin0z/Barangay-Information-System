@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List of Residents</title>
+    <title>List Barangay Clearance</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
@@ -12,38 +12,12 @@
 
 <style>
 
-.fa-edit{
-    color:black;
+.fa-plus-square{
+    color:green;
     font-size: 25px;
   }
-  .fa-edit:hover{
-    color:blue;
-  }
-  .fa-trash{
-  margin-left: 10px;
-  color:grey;
-  font-size: 25px;
-}
-.fa-trash:hover{
-  color:red;
-}
-  .ad{
-  float:right;
-  width: 100px;
-  height: 40px;
-  background-color:cyan ;
-  margin-top:-20px ;
-  margin-right: 40px;
-  border: 1px solid black;
-  border-radius: 4px;
-  color: black;
-}
-
-.ad:hover{
-   background-color:#4CAF50;
-   color: white;
-   cursor: pointer;
-
+  .fa-plus-square:hover{
+    color:yellowgreen;
   }
 
 </style>
@@ -60,18 +34,16 @@
   <li><a href="index">Dashboard</a></li>
   <li><a href="list_officials">Barangay Officials</a></li>
   <li><a href="list_sks">SK Officials</a></li>
-  <li><a class="active" href="list_residents">Resident Records</a></li>
+  <li><a href="list_residents">Resident Records</a></li>
   <li><a href="list_blotters">Blotter Records</a></li>
-  <li><a href="list_residents_bc">Barangay Clearance</a></li>
+  <li><a class="active" href="list_residents_bc">Barangay Clearance</a></li>
   <li><a href="list_residents_cr">Certificate of Residency</a></li>
   <li><a href="list_residents_ci">Certificate of Indigency</a></li>
 </ul>
 
 <div class="cont">
   
-  <h1 class="h"><i class="fa fa-users" style="color: cyan;"></i> Resident Records</h1>
-
-  <a  href="create_residents"><button class="ad"><i class="fa fa-user-plus"></i> Resident</button></a>
+  <h1 class="h"><i class="fa fa-certificate" style="color: cyan;"></i> Barangay Clearance</h1>
 
     <table id="myTable" style="width: 98%;">
       <thead>
@@ -89,18 +61,18 @@
         </tr>
       </thead>
       <tbody>
-        {% for resident in residents_list %}
+        {% for residents_bc in list_residents_bc %}
 
         <tr>
-          <td>{{ resident.full_name }}</td>
-          <td>{{ resident.nick_name }}</td>
-          <td>{{ resident.birth_date }}</td>
-          <td>{{ resident.age }}</td>
-          <td>{{ resident.gender }}</td>
-          <td>{{ resident.civil_status }}</td>
-          <td>{{ resident.purok }}</td>
-          <td>{{ resident.voter_status }}</td>
-          <td><a href="/edit_resident/{{ resident.pk }}"><i class="fa fa-edit"></i></a> <a href="/delete_resident/{{ resident.pk }}" onclick="return confirm('Are you sure you want to delete this item?')"> <i class="fa fa-trash"></i></a></td>
+          <td>{{ residents_bc.full_name }}</td>
+          <td>{{ residents_bc.nick_name }}</td>
+          <td>{{ residents_bc.birth_date }}</td>
+          <td>{{ residents_bc.age }}</td>
+          <td>{{ residents_bc.gender }}</td>
+          <td>{{ residents_bc.civil_status }}</td>
+          <td>{{ residents_bc.purok }}</td>
+          <td>{{ residents_bc.voter_status }}</td>
+          <td><a href="/gbc_resident/{{ residents_bc.pk }}"><i class="fa fa-plus-square"></i></a></td>
         </tr>
 
         {% endfor %}
