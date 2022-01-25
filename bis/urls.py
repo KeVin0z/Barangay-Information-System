@@ -30,5 +30,7 @@ urlpatterns = [
     path('edit_sks/edit/<pk>', views.process_edit_sk, name='process_edit_sk'),
     path('list_residents_bc', views.list_residents_bc, name='list_residents_bc'),
     path('gbc_resident/<pk>', views.gbc_resident, name='gbc_resident'),
+    path('list_residents_cr', views.list_residents_cr, name='list_residents_cr'),
+    path('gcr_resident/<pk>', views.gcr_resident, name='gcr_resident'),
 
 ]

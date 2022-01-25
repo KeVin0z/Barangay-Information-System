@@ -1,12 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate of Residency</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    
+    .fa-arrow-circle-left{
+      font-size: 50px;
+      color:white;
+    }
+    
+    .fa-arrow-circle-left:hover{
+      font-size: 50px;
+      color:#64bea7;
+    }
+       </style>
+
 </head>
+<a href="/list_residents_bc"><i class="fa fa-arrow-circle-left" style="margin-left: 20px;"></i></a>
 <body>
+
+ 
+  <div class="coupon">
+    <div class="cont1">
   
-</body>
-</html>
+  <div class="head1">
+  <div class="head2">
+   
+  <h3>Republic of the Philippines <br> Province of Pangasinan <br> 
+  Municipality of Mangaldan <br> Barangay Banaoang</h3><br>
+
+   <div class="logo"><img src="{% static 'blogo.png' %}" width="100" height="100"></div>
+
+   <div class="logo1s"><img src="{% static 'mangaldanseal.png' %}" width="100" height="100"></div>
+  </div>
+  <div class="head3">
+   <center><h2> Office of the Punong Barangay</h2></center>
+  </div>
+  
+  <div class="head4">
+   <center><h1 style="font-size: 40px; color: rgb(89, 0, 128);"> Certificate of Residency</h1></center>
+  </div>
+  </div>
+  
+   <div class="head5">
+  <div class="logo2"><img src="{% static 'banaoangseal.png' %}" width="380" height="380"></div>
+
+   <p><b>To Whom It May Concern;</b><br>
+    This is to certify that Mr/Mrs. <u><b>{{ gcr_resident.full_name }}, {{ gcr_resident.age }}</b></u> years old, <u><b>{{ gcr_resident.civil_status }}</b></u> is a bonafide resident
+        of <u><b>{{ gcr_resident.purok }}</b></u> Barangay Banaoang, Mangaldan, Pangasinan, and law abiding citizen of this barangay.
+        To certify further that she/he has no derogatory record/s filed in this barangay.<br><br>
+  
+        This Certificate of Residency is issued upon the request of Mr/Mrs.<u><b>{{ gcr_resident.full_name }}</b></u> for whatever legal
+        purposes it may serve to the above person.<br><br>
+  
+        issued this <b><span id='date'></span></b> day of <b><span id='mo'></span>, <span id='yr'></span></b> at Barangay <b>Banaoang, Mangaldan, Pangasinan.<b><br><br>
+  </div>
+  
+  
+  <div class="head6">
+    <p><h3 style="margin-left: 270px; margin-top: 50px; text-align: center;"><u>{{ pb.full_name }}</u><br>
+    <i>{{ pb.position }}</i></h3>
+    </p>
+   
+</div>
+  
+  <br><br>
+  <i><h2 style="margin-left: 350px; padding-bottom: 5%; font-family: timesnewroman; font-size: 30px; color:#0073e6;">Abante Banaoang!</h2><i>
+  
+  </div>
+  </div>
+
+  <script>
+    const d = new Date();
+    document.getElementById("date").innerHTML = d.getDate();
+
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    
+    const ds = new Date();
+    let month = months[ds.getMonth()];
+    document.getElementById("mo").innerHTML = month;
+
+    const y = new Date();
+    document.getElementById("yr").innerHTML = y.getFullYear();
+</script>
+  </body>
+  </html>

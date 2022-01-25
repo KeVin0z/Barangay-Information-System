@@ -12,11 +12,11 @@
 
 <style>
 
-.fa-plus-square{
+.fa-print{
     color:green;
     font-size: 25px;
   }
-  .fa-plus-square:hover{
+  .fa-print:hover{
     color:yellowgreen;
   }
 
@@ -72,7 +72,7 @@
           <td>{{ residents_bc.civil_status }}</td>
           <td>{{ residents_bc.purok }}</td>
           <td>{{ residents_bc.voter_status }}</td>
-          <td><a href="/gbc_resident/{{ residents_bc.pk }}"><i class="fa fa-plus-square"></i></a></td>
+          <td><a href="/gbc_resident/{{ residents_bc.pk }}"><i class="fa fa-print"></i></a></td>
         </tr>
 
         {% endfor %}
