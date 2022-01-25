@@ -49,7 +49,7 @@
     <div class="conto">
     <form action="/edit_officials/edit/{{ edit_official.pk }}" method="post" enctype="multipart/form-data">{% csrf_token %}
 
-      <img src="/media/{{ edit_official.image }}" style="height:20% ; width:20% ; margin-left: 41%;"/><br><br>
+      <img src="{{ edit_official.image }}" style="height:20% ; width:20% ; margin-left: 41%;"/><br><br>
       <label for="fname">Picture:</label>
       <input type="file" name="image"><br><br>
 
