@@ -192,7 +192,8 @@ def process_create_sk(request):
 
 def list_sks(request):
     sks = Sk.objects.all()
-    return render(request, 'list_sks.html', { 'sks_list' : sks })
+    skc = Official.objects.get(chairmanship = 'SANGGUNIANG KABATAAN')
+    return render(request, 'list_sks.html', { 'sks_list' : sks, 'skc' : skc })
 
 def edit_sk(request, pk):
     sk = Sk.objects.get(pk = pk)
