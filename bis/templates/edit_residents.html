@@ -54,7 +54,7 @@
         <input type="text" class="nname" name="nick_name" value="{{ edit_resident.nick_name }}">
 
         <label for="bdate">Birth Date:</label>
-        <input type="date" class="bdate" name="birth_date" value="{{ edit_resident.birth_date }}">
+        <input type="date" class="bdate" name="birth_date" value="{{ edit_resident.birth_date|date:'Y-m-d' }}">
 
         <label for="gender">Gender:</label>
         <input type="text" class="gender" name="gender" value="{{ edit_resident.gender }}">

@@ -67,10 +67,10 @@
         <input type="text" class="loc" name="location" value="{{ edit_blotter.location }}">
 
         <label for="date">Date:</label>
-        <input type="date" class="bdate" name="date" value="{{ edit_blotter.date }}">
+        <input type="date" class="bdate" name="date" value="{{ edit_blotter.date|date:'Y-m-d' }}">
 
         <label for="time">Time:</label>
-        <input type="time" class="bdate" name="time" value="{{ edit_blotter.time }}">
+        <input type="time" class="bdate" name="time" value="{{ edit_blotter.time|time:'h:i:s' }}">
 
         <label for="vstat">Status:</label>
         <select class="cstat" name="status" required>
