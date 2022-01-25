@@ -22,8 +22,9 @@
        </style>
 
 </head>
-<a href="/list_residents_bc"><i class="fa fa-arrow-circle-left" style="margin-left: 20px;"></i></a>
-<body onload="window.print()">
+<body>
+
+  <a href="/list_residents_bc" id="backButton"><i class="fa fa-arrow-circle-left"  style="margin-left: 20px;"></i></a>
     
 <div class="coupon">
   <div class="cont1">
@@ -80,6 +81,13 @@ Municipality of Mangaldan <br> Barangay Banaoang</h3><br>
 </div>
 </div>
 <script>
+    window.onload = function(){
+      backButton = document.getElementById("backButton");
+      backButton.style.display = "none";
+      window.print();
+      setTimeout(function () { backButton.style.display = "block"; }, 100);
+    }
+
     const d = new Date();
     document.getElementById("date").innerHTML = d.getDate();
 

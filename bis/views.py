@@ -227,3 +227,12 @@ def gcr_resident(request, pk):
     pb = Official.objects.get(position = 'Punong Barangay')
     return render(request, 'certificate_residency.html', { 'gcr_resident' : resident_cr, 'pb' : pb })
 
+def list_residents_ci(request):
+    residents_ci = Resident.objects.all()
+    return render(request, 'list_residents_ci.html', { 'list_residents_ci' : residents_ci })
+
+def gci_resident(request, pk):
+    resident_ci = Resident.objects.get(pk = pk)
+    pb = Official.objects.get(position = 'Punong Barangay')
+    return render(request, 'certificate_indigency.html', { 'gci_resident' : resident_ci, 'pb' : pb })
+

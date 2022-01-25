@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List of Residents</title>
+    <title>List Certificate of Indigency</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
@@ -69,9 +69,7 @@
 
 <div class="cont">
   
-  <h1 class="h"><i class="fa fa-users" style="color: cyan;"></i> Resident Records</h1>
-
-  <a  href="create_residents"><button class="ad"><i class="fa fa-user-plus"></i> Resident</button></a>
+  <h1 class="h"><i class="fa fa-users" style="color: cyan;"></i> Certificate of Indigency</h1>
 
     <table id="myTable" style="width: 98%;">
       <thead>
@@ -89,18 +87,18 @@
         </tr>
       </thead>
       <tbody>
-        {% for residents_bc in list_residents_bc %}
+        {% for residents_ci in list_residents_ci %}
 
         <tr>
-          <td>{{ residents_bc.full_name }}</td>
-          <td>{{ residents_bc.nick_name }}</td>
-          <td>{{ residents_bc.birth_date }}</td>
-          <td>{{ residents_bc.age }}</td>
-          <td>{{ residents_bc.gender }}</td>
-          <td>{{ residents_bc.civil_status }}</td>
-          <td>{{ residents_bc.purok }}</td>
-          <td>{{ residents_bc.voter_status }}</td>
-          <td><a href="/gbc_resident/{{ residents_bc.pk }}"><i class="fa fa-print"></i></a></td>
+          <td>{{ residents_ci.full_name }}</td>
+          <td>{{ residents_ci.nick_name }}</td>
+          <td>{{ residents_ci.birth_date }}</td>
+          <td>{{ residents_ci.age }}</td>
+          <td>{{ residents_ci.gender }}</td>
+          <td>{{ residents_ci.civil_status }}</td>
+          <td>{{ residents_ci.purok }}</td>
+          <td>{{ residents_ci.voter_status }}</td>
+          <td><a href="/gci_resident/{{ residents_ci.pk }}"><i class="fa fa-print"></i></a></td>
         </tr>
 
         {% endfor %}

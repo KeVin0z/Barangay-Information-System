@@ -32,5 +32,7 @@ urlpatterns = [
     path('gbc_resident/<pk>', views.gbc_resident, name='gbc_resident'),
     path('list_residents_cr', views.list_residents_cr, name='list_residents_cr'),
     path('gcr_resident/<pk>', views.gcr_resident, name='gcr_resident'),
+    path('list_residents_ci', views.list_residents_ci, name='list_residents_ci'),
+    path('gci_resident/<pk>', views.gci_resident, name='gci_resident'),
 
 ]
